@@ -1,0 +1,55 @@
+include includes/vars
+include includes/mixins
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    include includes/links
+    title #{name}
+  body 
+    .header 
+      .container
+        .logo #{name.toUpperCase()}
+        ul 
+          li: a(href="#home") #{firstList}
+          li: a(href="#about") #{secondList}
+          li: a(href="#services") #{thirdList}
+    .landing#home
+      .container  
+        h1 #{name}'s Website
+        p A #{service || 'Unkown Service'} With #{age || 'Unkown'} years old with an #{experience || 'Unkown'} experience
+    .designs#about
+      .container 
+        .boxes 
+          .box
+            img(src="", alt="")
+            .text 
+              h3 #{makes} Title 
+              p #{makes} Discreption 
+          .box
+            img(src="", alt="")
+            .text 
+              h3 #{makes} Title 
+              p #{makes} Discreption 
+          .box
+            img(src="", alt="")
+            .text 
+              h3 #{makes} Title 
+              p #{makes} Discreption
+    .services(id="services")
+      .container 
+        .box 
+          <i class="fa-solid fa-gauge-high"></i>
+          h2 #{serviceOne}
+          p #{serviceOneInfo}
+        .box 
+          <i class="fa-solid fa-circle-check"></i>
+          h2 #{serviceTwo}
+          p #{serviceTwoInfo}
+        .box 
+          <i class="fa-solid fa-code"></i>
+          h2 #{serviceThree}
+          p #{serviceThreeInfo}
+    script(src="./js/main.js") 
